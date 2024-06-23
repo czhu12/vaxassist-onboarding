@@ -1,0 +1,29 @@
+<div class="d-flex flex-row" id="add-location">
+  <div class="bg-white px-5 sidebar">
+    <h1 class="fw-bold pt-5 mb-2">Add new retailer location</h4>
+    <div class="text-help mb-4">
+      Add your provider location to the Pfizer directory. Already have an account? <a href="/">Sign in</a>
+    </div>
+
+    <div class="mb-2">
+      <small>Select all days available for services</small>
+    </div>
+    <div class="d-inline-flex flex-wrap flex-row options mb-2">
+      <% Date::DAYNAMES.each do |day| %>
+        <%= render "shared/select_pill", name: day %>
+      <% end %>
+    </div>
+    <hr />
+
+    <h5 class="fw-bold mt-4 mb-3">Sunday</h5>
+
+    <div class="d-flex justify-content-end options flex-row mt-5">
+      <a href="/add_location" type="button" class="btn btn-custom d-flex align-items-center justify-content-center">Back to location details</a>
+
+      <button type="button" class="btn btn-main">Save schedule</button>
+    </div>
+
+  </div>
+  <div class="container main-content">
+  </div>
+</div>

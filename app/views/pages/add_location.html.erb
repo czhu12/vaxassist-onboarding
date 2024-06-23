@@ -1,0 +1,84 @@
+<div class="d-flex flex-row" id="add-location">
+  <div class="bg-white px-5 sidebar">
+    <h1 class="fw-bold pt-5 mb-2">Add new retailer location</h4>
+    <div class="text-help mb-4">
+      Add your provider location to the Pfizer directory. Already have an account? <a href="/">Sign in</a>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Name of location">
+      <label for="floatingInput">Name of location</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Address">
+      <label for="floatingInput">Address</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Address">
+      <label for="floatingInput">Apt, floor, suite (optional)</label>
+    </div>
+
+    <div class="d-flex flex-row mb-3 options">
+      <div class="form-floating flex-grow-1">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Address">
+        <label for="floatingInput">Apt, floor, suite (optional)</label>
+      </div>
+
+      <div class="form-floating flex-grow-1">
+        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+          <option selected></option>
+          <% PagesController::STATES.each do |state| %>
+            <option value="<%= state[0] %>"><%= state[1] %></option>
+          <% end %>
+        </select>
+        <label for="floatingSelect">State</label>
+      </div>
+
+      <div class="form-floating flex-grow-1">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Address">
+        <label for="floatingInput">Apt, floor, suite (optional)</label>
+      </div>
+
+    </div>
+
+    <h4 class="fw-bold pt-5 mb-4">Services</h4>
+    <div class="d-flex flex-row options">
+      <div class="form-floating mb-3 flex-grow-1">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Booking website">
+        <label for="floatingInput">Booking website</label>
+      </div>
+
+      <div class="form-floating mb-3 flex-grow-1">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Booking phone number">
+        <label for="floatingInput">Booking phone number</label>
+      </div>
+    </div>
+
+    <div class="text-help mt-2 mb-3">Select all vaccines that will be offered at this location</div>
+
+    <div class="d-inline-flex flex-row options mb-3">
+      <%= render "shared/select_pill", name: "COVID-19" %>
+      <%= render "shared/select_pill", name: "Flu" %>
+      <%= render "shared/select_pill", name: "RSV" %>
+      <%= render "shared/select_pill", name: "Pneumonia" %>
+    </div>
+
+    <div class="text-help mt-2 mb-3">Will this location offer the Bridge Access Program? <a href="https://www.cdc.gov/vaccines/programs/bridge/index.html" target="_blank">Learn more</a></div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+      <label class="form-check-label" for="flexCheckIndeterminate">
+        <h6 class="fw-bold">Yes, this location will offer the Bridge Access Program</h6>
+      </label>
+    </div>
+
+    <div class="d-flex justify-content-end options flex-row mt-5">
+      <button type="button" class="btn btn-main-secondary">Save location</button>
+
+      <a href="/add_schedule" type="button" class="btn btn-main">Add scheduling</a>
+    </div>
+
+  </div>
+  <div class="container main-content">
+  </div>
+</div>

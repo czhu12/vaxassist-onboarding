@@ -1,0 +1,106 @@
+@font-face {
+  font-family: PfizerDiatype;
+  src: url(/fonts/PfizerDiatype-Regular.woff2);
+}
+
+@font-face {
+  font-family: PfizerDiatype;
+  src: url(/fonts/PfizerDiatype-Heavy.woff2);
+  font-weight: bold;
+}
+
+
+body {
+  font-family: PfizerDiatype,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+#add-location {
+  .main-content {
+    padding: 0 3rem;
+    background-color: #fbfbfb;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    overflow-y: scroll;
+    height: 100vh;
+    min-width: 800px;
+    padding-bottom: 4rem;
+  }
+}
+#root {
+  .main-content {
+    padding: 0 3rem;
+    background-color: #fbfbfb;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    min-width: 375px;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000656 !important;
+  margin: 0 !important;
+}
+
+.options{
+  gap: 1rem;
+}
+
+// Define your custom color
+$btn-main-color: #000656;
+
+// Extend the Bootstrap button styles with your custom styles
+.btn-main {
+  background-color: lighten($btn-main-color, 10%);
+  border-color: lighten($btn-main-color, 10%);
+  color: white;
+  padding: 20px 36px !important;
+  border-radius: 14px;
+
+
+  &:hover {
+    color: white;
+    background-color: $btn-main-color;
+    border-color: $btn-main-color;
+  }
+
+  &:focus,
+  &:active,
+  &.active,
+  &:focus:active,
+  &.active:focus {
+    color: white;
+    background-color: $btn-main-color;
+    border-color: $btn-main-color;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: white;
+    background-color: $btn-main-color;
+    border-color: $btn-main-color;
+  }
+}
+
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.4); /* Adjust color and opacity */
+  margin: 1rem 0; /* Optional: adjust the margin */
+}
+
+.link-unstyled {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent element */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+}
