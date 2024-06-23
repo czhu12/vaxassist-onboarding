@@ -1,4 +1,16 @@
 module ConstantsHelper
+  def half_hour_increments
+    times = []
+    time = Time.now.beginning_of_day
+  
+    while time < Time.now.end_of_day
+      times << time
+      time += 30.minutes
+    end
+  
+    times
+  end
+
   STATES = Array[ ["AK", "Alaska"], 
                 ["AL", "Alabama"], 
                 ["AR", "Arkansas"], 
@@ -54,4 +66,5 @@ module ConstantsHelper
                 ["WI", "Wisconsin"], 
                 ["WV", "West Virginia"], 
                 ["WY", "Wyoming"] ]
+
 end
