@@ -1,4 +1,28 @@
-<div class="d-flex flex-row" id="add-location">
+<div class="d-flex flex-row" id="add-location" data-controller="location">
+  <!-- Modal -->
+  <div class="modal fade" id="vaccine-brands" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body p-5">
+          <h3 class="fw-bold">Add COVID Vaccine</h3>
+          <p class="text-help">
+            Vaccines offered at each location
+          </p>
+
+          <div class="d-inline-flex flex-row options mb-5">
+            <%= render "shared/select_pill", name: "Pfizer" %>
+            <%= render "shared/select_pill", name: "Moderna" %>
+            <%= render "shared/select_pill", name: "Novavax" %>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button data-bs-toggle="modal" type="button" class="btn btn-main">Add Vaccines</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="bg-white px-5 sidebar">
     <h1 class="fw-bold pt-5 mb-2">Add new retailer location</h4>
     <div class="text-help mb-4">
@@ -58,10 +82,18 @@
     <div class="text-help mt-2 mb-3">Select all vaccines that will be offered at this location</div>
 
     <div class="d-inline-flex flex-row options mb-3">
-      <%= render "shared/select_pill", name: "COVID-19" %>
-      <%= render "shared/select_pill", name: "Flu" %>
-      <%= render "shared/select_pill", name: "RSV" %>
-      <%= render "shared/select_pill", name: "Pneumonia" %>
+      <a class="link-unstyled" href="#" data-bs-toggle="modal" data-bs-target="#vaccine-brands">
+        <%= render "shared/select_pill", name: "COVID-19" %>
+      </a>
+      <a class="link-unstyled" href="#" data-bs-toggle="modal" data-bs-target="#vaccine-brands">
+        <%= render "shared/select_pill", name: "Flu" %>
+      </a>
+      <a class="link-unstyled" href="#" data-bs-toggle="modal" data-bs-target="#vaccine-brands">
+        <%= render "shared/select_pill", name: "RSV" %>
+      </a>
+      <a class="link-unstyled" href="#" data-bs-toggle="modal" data-bs-target="#vaccine-brands">
+        <%= render "shared/select_pill", name: "Pneumonia" %>
+      </a>
     </div>
 
     <div class="text-help mt-2 mb-3">Will this location offer the Bridge Access Program? <a href="https://www.cdc.gov/vaccines/programs/bridge/index.html" target="_blank">Learn more</a></div>
