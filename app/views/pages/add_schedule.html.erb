@@ -101,6 +101,8 @@
   <% Date::DAYNAMES.each do |day| %>
     document.getElementById("<%= day %>").addEventListener("click", function() {
       const template = document.getElementById("day");
+      this.classList.toggle("bg-main");
+      this.children[0].classList.toggle("text-light");
       const clone = template.content.cloneNode(true);
       clone.children[0].innerText = "<%= day %>";
       document.getElementById("day-container").appendChild(clone);
