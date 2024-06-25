@@ -1,0 +1,38 @@
+<div class="modal fade" id="<%= type %>-brands" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-5">
+        <h3 class="fw-bold">Add <%= type %> Vaccine</h3>
+        <p class="text-help">
+          Vaccines offered at each location
+        </p>
+
+        <div class="d-inline-flex flex-row options mb-5">
+          <% brands.each do |brand| %>
+            <%= render "shared/select_pill", name: brand %>
+          <% end %>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button data-bs-toggle="modal" type="button" class="btn btn-main">Add Vaccines</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<a class="link-unstyled" href="#" data-bs-toggle="modal" data-bs-target="#<%= type %>-brands">
+  <%= render "shared/select_pill", name: type %>
+</a>
+<script>
+  <%= brands.push(type) %>.forEach((name) => {
+    document.getElementById(name).addEventListener("click", function() {
+       if (this.classList.contains("bg-main")) {
+      this.classList.remove("bg-main");
+      this.children[0].classList.remove("text-light");
+      return;
+    }
+    this.classList.toggle("bg-main");
+    this.children[0].classList.toggle("text-light");
+  });
+});
+</script>
