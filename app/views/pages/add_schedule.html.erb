@@ -82,13 +82,18 @@
 
     <div class="d-flex justify-content-end options flex-row mt-5">
       <a href="/add_location" type="button" class="btn btn-custom d-flex align-items-center justify-content-center">Back to location details</a>
-      <button type="button" class="btn btn-main">Save schedule</button>
+      <button type="button" class="btn btn-main" onclick="showSuccessMessage()">Save schedule</button>
     </div>
 
   </div>
   <div class="container main-content">
   </div>
 </div>
+   <div id="success-message" class="success-message">
+        <div class="emoji">🎉</div>
+        <div class="text">Your location should show up in vaxassist within 5 business days</div>
+    </div>
+
 <script>
   <% Date::DAYNAMES.each do |day| %>
     document.getElementById("<%= day %>").addEventListener("click", function() {
@@ -107,4 +112,8 @@
       document.getElementById("day-container").appendChild(clone);
     });
   <% end %>
+
+    function showSuccessMessage() {
+            document.getElementById('success-message').style.display = 'block';
+        }
 </script>
