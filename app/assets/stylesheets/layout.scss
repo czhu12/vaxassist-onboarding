@@ -109,3 +109,13 @@ hr {
 .bg-main {
   background-color: #000656 !important
 }
+
+.hover-card {
+  transition: all 0.1s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #0000C1;
+  }
+}
+ 
