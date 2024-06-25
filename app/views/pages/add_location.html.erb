@@ -104,15 +104,9 @@
       <a class="link-unstyled" href="#" data-bs-toggle="modal" data-bs-target="#vaccine-brands">
         <%= render "shared/select_pill", name: "COVID-19" %>
       </a>
-      <a class="link-unstyled" href="#" data-bs-toggle="modal" data-bs-target="#vaccine-brands">
-        <%= render "shared/select_pill", name: "Flu" %>
-      </a>
-      <a class="link-unstyled" href="#" data-bs-toggle="modal" data-bs-target="#vaccine-brands">
-        <%= render "shared/select_pill", name: "RSV" %>
-      </a>
-      <a class="link-unstyled" href="#" data-bs-toggle="modal" data-bs-target="#vaccine-brands">
-        <%= render "shared/select_pill", name: "Pneumonia" %>
-      </a>
+      <%= render "shared/select_pill", name: "Flu" %>
+      <%= render "shared/select_pill", name: "RSV" %>
+      <%= render "shared/select_pill", name: "Pneumonia" %>
     </div>
 
     <div class="text-help mt-2 mb-3">Will this location offer the Bridge Access Program? <a href="https://www.cdc.gov/vaccines/programs/bridge/index.html" target="_blank">Learn more</a></div>
@@ -133,3 +127,19 @@
   <div class="container main-content">
   </div>
 </div>
+<script>
+  function toggleSelect(selectPill) {
+    if (selectPill.classList.contains("bg-main")) {
+      selectPill.classList.remove("bg-main");
+      selectPill.children[0].classList.remove("text-light");
+      return;
+    }
+    selectPill.classList.toggle("bg-main");
+    selectPill.children[0].classList.toggle("text-light");
+  }
+  ['Pfizer', 'Moderna', 'Novavax', 'COVID-19', 'Flu', 'RSV', 'Pneumonia'].forEach((name) => {
+    document.getElementById(name).addEventListener("click", function() {
+      toggleSelect(this);
+    });
+  });
+</script>
